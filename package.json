@@ -2,7 +2,7 @@
   "name": "tabs-project",
   "version": "1.0.0",
   "description": "create tabs with vanilla js",
-  "main": "index.html"
+  "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "test": "jest",
