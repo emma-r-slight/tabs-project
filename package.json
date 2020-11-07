@@ -2,16 +2,13 @@
   "name": "tabs-project",
   "version": "1.0.0",
   "description": "create tabs with vanilla js",
+  "main": "index.html"
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "start": "parcel index.html --open",
+    "test": "jest",
+    "build": "parcel build index.html --log-level 4"
   },
   "author": "Emma S",
   "license": "ISC",
-  "devDependencies": {
-    "webpack": "^5.4.0",
-    "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
-  }
+  "devDependencies": {}
 }
