@@ -10,5 +10,7 @@
   },
   "author": "Emma S",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
 }

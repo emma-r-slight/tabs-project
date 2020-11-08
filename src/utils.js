@@ -1,10 +1,11 @@
 const container = document.getElementById('container')
+container.classList.add('container')
 const elementContent = document.createElement('div')
 elementContent.id = 'elementContent'
 const flexContainer = document.createElement('div')
 flexContainer.id = 'flexContainer'
 
-const addContent = (parentElement, element, addName, addClass, text) => {
+const addContent = (parentElement, element, addId, addClass, text) => {
   const elementNode = document.createElement(element)
   const textNode = document.createTextNode(text)
   if (addId !== null) {
