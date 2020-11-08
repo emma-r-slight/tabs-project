@@ -1,57 +1,68 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: auto;
-  min-height: 300px;
+  width: 100vw;
+  height: 100vh;
   font-family: monospace;
 }
 
 .tab-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   width: 100%;
   height: 60px;
   align-items: flex-end;
   justify-content: center;
-  background-color: #262626;
-  border-radius: 5px;
-  padding: 0 20px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15),
+  /* background-color: #262626; */
+  /* border-radius: 5px; */
+  /* padding: 0 20px; */
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15),
     0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
-  position: s;
+  position: s; */
 }
 
 .tab-btn {
   padding: 0.5rem 2rem;
-  margin-right: 50px;
+  /* margin-right: 50px; */
   color: #b3b3b3;
   font-weight: 400;
   display: flex;
   justify-content: stretch;
   align-items: center;
-  font-size: 15px;
+  font-size: 1rem;
   /* padding-left: 10px; */
   font-weight: 400;
   cursor: pointer;
   border-radius: 5px 0 0 0;
+  border: solid 1px;
+  border-bottom: none;
   transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  width: 40%;
 }
 
 .tab-btn .active {
   color: #fff;
 }
 
+.tab-btn:hover {
+  color: #262626;
+  font-weight: bold;
+}
+
 .t-panel-container {
   padding: 20px;
 }
 
-.t-panel {
+.tab-panel {
   color: #262626;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   transition: all 0.2s ease-in-out;
-  opacity: 0;
+  opacity: 1;
   height: auto;
-  max-height: 0px;
   overflow: hidden;
 }
 
@@ -59,4 +70,8 @@
   opacity: 1;
   height: auto;
   max-height: 500px;
+}
+
+img {
+  height: 300px;
 }

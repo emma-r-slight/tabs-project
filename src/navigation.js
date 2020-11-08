@@ -1,4 +1,6 @@
 import { addContent, container, elementContent, flexContainer } from './utils'
+import { homeContent } from './home'
+import home from 'home'
 
 const tabNav = () => {
   const tabBtn = document.createElement('div')
