@@ -72,27 +72,33 @@ const burgerMenu = {
 }
 
 export const menuPage = () => {
-  const menu = document.createElement('div')
-  menu.id = 'tab-content'
-  menu.classList.add('text-focus-in')
-  tabPanel.appendChild(menu)
+  const menuDiv = document.createElement('div')
+  menuDiv.id = 'menu'
+  menuDiv.classList.add('text-focus-in')
+  menuDiv.classList.add('tab-content')
+  tabPanel.appendChild(menuDiv)
 
-  addContent(menu, 'h1', null, 'title', 'Menu')
-  addContent(menu, 'h3', 'menu-title', 'title', burgerMenu.title)
+  addContent(menuDiv, 'h1', null, 'title', 'Menu')
+  addContent(menuDiv, 'h2', 'menuDiv-title', 'title', burgerMenu.title)
   addContent(
-    menu,
+    menuDiv,
     'blockquote',
-    'menu-description',
+    'menuDiv-description',
     null,
     burgerMenu.description
   )
   burgerMenu.items.forEach((burger, index) => {
     console.log('burger')
-    addContent(menu, 'h4', null, 'burgerName', burger.name)
-    addContent(menu, 'p', null, 'description', burger.description)
-    addContent(menu, 'p', null, 'price', `${burger.type} : ${burger.price}`)
+    addContent(menuDiv, 'h4', null, 'burgerName', burger.name)
+    addContent(menuDiv, 'p', null, 'description', burger.description)
+    addContent(menuDiv, 'p', null, 'price', `${burger.type} : ${burger.price}`)
     if ('type2' in burger)
-      addContent(menu, 'p', null, 'price', `${burger.type2} : ${burger.price2}`)
+      addContent(
+        menuDiv,
+        'p',
+        null,
+        'price',
+        `${burger.type2} : ${burger.price2}`
+      )
   })
-  return menu
 }

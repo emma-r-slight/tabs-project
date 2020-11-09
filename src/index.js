@@ -6,21 +6,25 @@ import { menuPage } from './menu'
 tabNav()
 console.log(tabPanel.firstChild)
 
-const clearcontent = () => {
-  while (tabPanel.firstChild) tabPanel.removeChild(tabPanel.firstChild)
+homeContent()
+menuPage()
+
+function clickEvent() {
+  const tabElement = document.getElementById('tab-container')
+  tabElement.addEventListener('click', theEvent, false)
+
+  function theEvent(e) {
+    if (e.target !== e.currentTarget) {
+      let clickedItem = e.target.id
+      console.log(clickedItem)
+      clickedItem === 'menu-tab'
+        ? ((document.getElementById('home').style.display = 'none'),
+          (document.getElementById('menu').style.display = 'flex'))
+        : ((document.getElementById('menu').style.display = 'none'),
+          (document.getElementById('home').style.display = 'flex'))
+    }
+    e.stopPropagation()
+  }
 }
 
-const home = document.getElementById('home-tab')
-home.addEventListener('click', () => {
-  clearcontent()
-  homeContent()
-})
-
-const burgerMenu = document.getElementById('menu-tab')
-
-burgerMenu.addEventListener('click', () => {
-  clearcontent()
-  menuPage()
-})
-// const homePanel = HomeContent.tabPanel
-// container.appendChild(homePanel)
+clickEvent()

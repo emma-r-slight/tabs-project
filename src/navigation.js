@@ -8,7 +8,7 @@ const tabNav = () => {
   addContent(header, 'h1', 'header-nav', null, 'Maunganui Burgers')
 
   const tabBtn = document.createElement('div')
-  tabBtn.classList.add('tab-container')
+  tabBtn.id = 'tab-container'
   header.appendChild(tabBtn)
   addContent(tabBtn, 'p', 'home-tab', 'tab-btn', 'Home')
   addContent(tabBtn, 'p', 'menu-tab', 'tab-btn', 'Menu')
