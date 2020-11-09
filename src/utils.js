@@ -1,9 +1,9 @@
 const container = document.getElementById('container')
 container.classList.add('container')
-const elementContent = document.createElement('div')
-elementContent.id = 'elementContent'
-const flexContainer = document.createElement('div')
-flexContainer.id = 'flexContainer'
+const content = document.createElement('div')
+content.id = 'content'
+const tabPanel = document.createElement('div')
+tabPanel.classList.add('tab-panel-container')
 
 const addContent = (parentElement, element, addId, addClass, text) => {
   const elementNode = document.createElement(element)
@@ -19,4 +19,4 @@ const addContent = (parentElement, element, addId, addClass, text) => {
   parentElement.appendChild(elementNode)
 }
 
-export { addContent, container, elementContent, flexContainer }
+export { addContent, container, content, tabPanel }

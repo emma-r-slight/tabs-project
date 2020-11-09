@@ -1,11 +1,11 @@
-import { addContent, elementContent, container } from './utils'
+import { addContent, tabPanel } from './utils'
 
 const burgerMenu = {
-  title: 'BEEF',
+  title: 'Beef Burgers  ',
   description: 'Comes with Free Range NZ Angus beef patty',
   items: [
     {
-      name: 'GREAT AMERICAN',
+      name: 'Great American',
       description:
         'Beef patty, kosher dill pickle, American mustard, double cheese, ketchup, salad, mayo on a sesame seed bun',
       type: 'GRAND',
@@ -71,25 +71,28 @@ const burgerMenu = {
   ],
 }
 
-const MenuPage = (() => {
-  const tabMenu = elementContent
-  tabMenu.classList.add('tab-panel')
-  tabMenu.id = 'menu'
+export const menuPage = () => {
+  const menu = document.createElement('div')
+  menu.id = 'tab-content'
+  menu.classList.add('text-focus-in')
+  tabPanel.appendChild(menu)
 
-  addContent(tabMenu, 'h1', null, 'title', 'Menu')
-  addContent(tabMenu, 'h3', 'menu-title', null, burgerMenu.title)
+  addContent(menu, 'h1', null, 'title', 'Menu')
+  addContent(menu, 'h3', 'menu-title', 'title', burgerMenu.title)
   addContent(
-    tabMenu,
+    menu,
     'blockquote',
     'menu-description',
     null,
     burgerMenu.description
   )
-  burgerMenu.items.forEach((burger) => {
-    addContent(tabMenu, 'h5', null, 'burgerName', burger.name)
-    addContent(tabMenu, 'p', null, 'description', burger.description)
-    addContent(tabMenu, 'p', null, 'type', burger.type)
-    addContent(tabMenu, 'p', null, 'price', burger.price)
+  burgerMenu.items.forEach((burger, index) => {
+    console.log('burger')
+    addContent(menu, 'h4', null, 'burgerName', burger.name)
+    addContent(menu, 'p', null, 'description', burger.description)
+    addContent(menu, 'p', null, 'price', `${burger.type} : ${burger.price}`)
+    if ('type2' in burger)
+      addContent(menu, 'p', null, 'price', `${burger.type2} : ${burger.price2}`)
   })
-  return { tabMenu }
-})()
+  return menu
+}
